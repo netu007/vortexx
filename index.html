@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>𝐓𝐇𝐄 𝐕𝐎𝐑𝐓𝐄𝐗 🀄️</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+            font-family: Arial, sans-serif;
+            background: #020202;
+            color: #fff;
+            overflow-x: hidden
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 50% 8%, rgba(255, 193, 7, .17), transparent 28%),
+                radial-gradient(circle at 10% 70%, rgba(255, 170, 0, .08), transparent 25%),
+                #020202
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            inset: -50%;
+            background: conic-gradient(from 0deg, transparent, #c99316, transparent 20%, transparent 60%, #ffdc55, transparent 80%);
+            opacity: .07;
+            animation: spin 18s linear infinite;
+            pointer-events: none
+        }
+
+        .wrap {
+            width: min(540px, 100%);
+            margin: auto;
+            padding: 18px 14px 45px;
+            position: relative
+        }
+
+        .particles span {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: #ffd34f;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ffd34f;
+            animation: float 7s linear infinite;
+            opacity: .7
+        }
+
+        .particles span:nth-child(1) {
+            left: 8%;
+            top: 90%;
+            animation-delay: 0s
+        }
+
+        .particles span:nth-child(2) {
+            left: 25%;
+            top: 70%;
+            animation-delay: 1.5s
+        }
+
+        .particles span:nth-child(3) {
+            left: 50%;
+            top: 95%;
+            animation-delay: 3s
+        }
+
+        .particles span:nth-child(4) {
+            left: 72%;
+            top: 80%;
+            animation-delay: 2s
+        }
+
+        .particles span:nth-child(5) {
+            left: 91%;
+            top: 65%;
+            animation-delay: 4s
+        }
+
+        .card {
+            position: relative;
+            background: linear-gradient(145deg, rgba(17, 17, 17, .92), rgba(3, 3, 3, .97));
+            border: 1px solid rgba(231, 182, 45, .35);
+            border-radius: 26px;
+            margin-bottom: 16px;
+            padding: 24px;
+            box-shadow: 0 0 35px rgba(255, 191, 35, .07), inset 0 0 35px rgba(255, 193, 7, .025);
+            overflow: hidden
+        }
+
+        .card:before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -50%;
+            width: 40%;
+            height: 300%;
+            background: linear-gradient(90deg, transparent, rgba(255, 230, 130, .18), transparent);
+            transform: rotate(20deg);
+            animation: shine 5s ease-in-out infinite;
+            pointer-events: none
+        }
+
+        .hero {
+            text-align: center;
+            padding: 34px 18px 28px
+        }
+
+        .logoWrap {
+            width: 160px;
+            height: 160px;
+            margin: auto;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #fff0a0, #b67b00, #fff2a7, #9b6900);
+            box-shadow: 0 0 20px #f4c43d, 0 0 55px rgba(244, 196, 61, .28);
+            animation: pulse 2.6s ease-in-out infinite
+        }
+
+        .logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #070707
+        }
+
+        h1 {
+            font-size: 43px;
+            letter-spacing: 3px;
+            margin: 20px 0 7px;
+            color: #ffd34f;
+            text-shadow: 0 0 8px #8d650d, 0 0 28px rgba(255, 204, 55, .35);
+            animation: titleGlow 2.5s ease-in-out infinite
+        }
+
+        .sub {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #aaa
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0
+        }
+
+        .badge {
+            padding: 9px 15px;
+            border-radius: 30px;
+            border: 1px solid #8d6919;
+            color: #f5ca43;
+            background: rgba(255, 193, 7, .05);
+            font-size: 12px;
+            font-weight: bold
+        }
+
+        .active {
+            color: #3cff88;
+            border-color: #178e48;
+            box-shadow: 0 0 15px rgba(40, 255, 120, .15)
+        }
+
+        .join {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: #080808;
+            font-weight: 900;
+            font-size: 19px;
+            padding: 18px;
+            border-radius: 17px;
+            background: linear-gradient(110deg, #b77a05, #ffe36d, #fff3ae, #d69a16);
+            background-size: 250% 100%;
+            box-shadow: 0 0 22px rgba(255, 195, 45, .28);
+            animation: goldMove 3s linear infinite;
+            transition: .2s
+        }
+
+        .join:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(255, 204, 60, .55)
+        }
+
+        .join small {
+            display: block;
+            font-size: 10px;
+            margin-top: 4px;
+            opacity: .65
+        }
+
+        h2 {
+            text-align: center;
+            color: #f6ca45;
+            letter-spacing: 2px;
+            font-size: 20px;
+            margin: 0 0 20px;
+            text-shadow: 0 0 14px rgba(255, 200, 60, .2)
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .item {
+            border: 1px solid #27231a;
+            border-radius: 17px;
+            padding: 18px 10px;
+            text-align: center;
+            background: linear-gradient(145deg, #101010, #070707);
+            transition: .25s;
+            position: relative
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+            border-color: #a87913;
+            box-shadow: 0 0 20px rgba(255, 193, 7, .13)
+        }
+
+        .icon {
+            font-size: 27px;
+            filter: drop-shadow(0 0 7px rgba(255, 205, 55, .4));
+            margin-bottom: 9px
+        }
+
+        .item b {
+            font-size: 14px
+        }
+
+        .item span {
+            display: block;
+            color: #8e8e8e;
+            font-size: 11px;
+            line-height: 1.4;
+            margin-top: 5px
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #b88920, transparent);
+            margin: 4px 0 20px
+        }
+
+        .footer {
+            text-align: center;
+            color: #c79827;
+            letter-spacing: 7px;
+            font-size: 11px;
+            margin-top: 20px
+        }
+
+        .note {
+            font-size: 10px;
+            line-height: 1.5;
+            color: #686868;
+            text-align: center;
+            margin-top: 16px
+        }
+
+        @keyframes pulse {
+            50% {
+                transform: scale(1.035);
+                box-shadow: 0 0 30px #f4c43d, 0 0 80px rgba(244, 196, 61, .35)
+            }
+        }
+
+        @keyframes titleGlow {
+            50% {
+                text-shadow: 0 0 15px #ffd34f, 0 0 40px rgba(255, 193, 7, .45)
+            }
+        }
+
+        @keyframes shine {
+
+            0%,
+            55% {
+                left: -60%
+            }
+
+            100% {
+                left: 150%
+            }
+        }
+
+        @keyframes goldMove {
+            0% {
+                background-position: 0%
+            }
+
+            100% {
+                background-position: 250%
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(20px);
+                opacity: 0
+            }
+
+            20% {
+                opacity: .8
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0
+            }
+        }
+
+        @media(max-width:390px) {
+            h1 {
+                font-size: 35px
+            }
+
+            .logoWrap {
+                width: 140px;
+                height: 140px
+            }
+
+            .card {
+                padding: 20px 16px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="particles"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="wrap">
+
+        <section class="card hero">
+            <div class="logoWrap"><img class="logo" src="logo.jpg"
+                   </div>
+            <h1>𝐓𝐇𝐄 𝐕𝐎𝐑𝐓𝐄𝐗 🀄️</h1>
+            <div class="sub">CRICKET • TOSS • MATCH UPDATES</div>
+            <div class="badges">
+                <div class="badge">★ OFFICIAL CHANNEL</div>
+                <div class="badge active">● ACTIVE NOW</div>
+            </div>
+            <a class="join" href="https://t.me/+dKM0Xf4gTVs0N2U1" target="_blank">✈ &nbsp; JOIN TELEGRAM<small>Tap to
+                    enter the 𝐓𝐇𝐄 𝐕𝐎𝐑𝐓𝐄𝐗 🀄️ community</small></a>
+        </section>
+
+        <section class="card">
+            <h2>WHAT YOU GET</h2>
+            <div class="divider"></div>
+            <div class="grid">
+                <div class="item">
+                    <div class="icon">🏏</div><b>Match Updates</b><span>Fast cricket updates & results</span>
+                </div>
+                <div class="item">
+                    <div class="icon">⚡</div><b>Live Updates</b><span>Important moments as they happen</span>
+                </div>
+                <div class="item">
+                    <div class="icon">📊</div><b>Match Analysis</b><span>Stats, trends & insights</span>
+                </div>
+                <div class="item">
+                    <div class="icon">👑</div><b>Premium Community</b><span>Dedicated cricket community</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>WHY JOIN?</h2>
+            <div class="divider"></div>
+            <div class="grid">
+                <div class="item">
+                    <div class="icon">🚀</div><b>Fast</b><span>Stay ahead with quick updates</span>
+                </div>
+                <div class="item">
+                    <div class="icon">🛡️</div><b>Focused</b><span>Everything in one place</span>
+                </div>
+                <div class="item">
+                    <div class="icon">🏆</div><b>Cricket First</b><span>Made for match followers</span>
+                </div>
+                <div class="item">
+                    <div class="icon">💎</div><b>Premium Feel</b><span>Clean, exclusive experience</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" style="text-align:center">
+            <h2>JOIN THE COMMUNITY</h2>
+            <p style="color:#999;font-size:13px">Don't miss the latest 𝐓𝐇𝐄 𝐕𝐎𝐑𝐓𝐄𝐗 🀄️ updates.</p>
+            <a class="join" href="https://t.me/+dKM0Xf4gTVs0N2U1" target="_blank">JOIN NOW →</a>
+        </section>
+
+        <div class="note">For sports information and community discussion only. Please follow applicable laws and
+            platform rules.</div>
+        <div class="footer">𝐓𝐇𝐄 𝐕𝐎𝐑𝐓𝐄𝐗 🀄️</div>
+    </div>
+</body>
+
+</html>
